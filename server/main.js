@@ -67,6 +67,39 @@ app.post('/usuario', (req, res) => {
   });
 });
 
+app.post('/conductor', (req, res) => {
+  const body = req.body;
+  const query = `INSERT INTO conductor(nombre, apellido, correo_electronico, hash_contrasenia, categoria_licencia, sexo, ci) VALUES ('${body.firstName}', '${body.lastName}','${body.email}','${body.password}','${body.driversCategory}','${body.gender}','${body.ci}');`;
+
+  connection.query(query, (err, rows, fields) => {
+    if (err) {
+      console.error('Error inserting record: ', err);
+      res.status(500).send('Error inserting record');
+      return;
+    }
+    console.log('1 record inserted');
+    //res.send('1 record inserted');
+    res.json({ message: '1 record inserted' });
+  });
+});
+
+app.post('/automovil', (req, res) => {
+  const body = req.body;
+  const query = `INSERT INTO automovil(placa, marca, anio, chasis) VALUES ('${body.licensePlate}', '${body.brand}','${body.year}','${body.chasis}');`;
+
+  connection.query(query, (err, rows, fields) => {
+    if (err) {
+      console.error('Error inserting record: ', err);
+      res.status(500).send('Error inserting record');
+      return;
+    }
+    console.log('1 record inserted');
+    //res.send('1 record inserted');
+    res.json({ message: '1 record inserted' });
+  });
+});
+
 app.listen(port, () => {
   console.log(`Project sample is running on: ${port}`);
 });
+

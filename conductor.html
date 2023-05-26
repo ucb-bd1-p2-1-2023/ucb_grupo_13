@@ -37,6 +37,41 @@
                 <input class="input" type="text" id="password" placeholder="Example: **********">
             </div>
         </div>
+
+
+
+        <div class="field">
+            <label class="label" for="driversCategory">Categoría de licencia:</label>
+            <div class="control">
+                <select class="input" id="driversCategory">
+                    <option value="p">P </option>
+                    <option value="a">A </option>
+                    <option value="b">B </option>
+                    <option value="c">C </option>
+                </select>
+            </div>
+        </div>
+        
+
+        <div class="field">
+            <label class="label" for="gender">Sexo:</label>
+            <div class="control">
+                <select class="input" id="gender">
+                    <option value="m">m </option>
+                    <option value="f">f </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label" for="ci">Carnet de identidad:</label>
+            <div class="control">
+                <input class="input" type="number" id="ci" placeholder="Example: **********">
+            </div>
+        </div>
+        
+
+
         <div class="block">
             <button class="button is-primary is-meidum is-fullwidth mt-6" onclick="submitForm()">Submit</button>
         </div>
@@ -50,11 +85,14 @@
                     lastName: document.getElementById('lastName').value,
                     email: document.getElementById('email').value,
                     password: document.getElementById('password').value,
+                    driversCategory: document.getElementById('driversCategory').value,
+                    gender: document.getElementById('gender').value,
+                    ci: document.getElementById('ci').value,
                 }
             }
             
-
-            const url = 'http://localhost:3000/usuario';
+            
+            const url = 'http://localhost:3000/conductor';
             const method = 'POST';
             const headers = {
                 'Accept': 'application/json',

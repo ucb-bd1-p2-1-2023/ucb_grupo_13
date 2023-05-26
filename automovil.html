@@ -14,27 +14,27 @@
     </div>
     <div class="box my-6">
         <div class="field">
-            <label class="label" for="firstName">First name:</label>
+            <label class="label" for="licensePlate">Placa:</label>
             <div class="control">
-                <input class="input" type="text" id="firstName" placeholder="Exammple: Carlos">
+                <input class="input" type="text" id="licensePlate" placeholder="Exammple: 574FRT">
             </div>
         </div>
         <div class="field">
-            <label class="label" for="lastName">Last name:</label>
+            <label class="label" for="brand">Marca:</label>
             <div class="control">
-                <input class="input" type="text" id="lastName" placeholder="Example: Terraza">
+                <input class="input" type="text" id="brand" placeholder="Example: Toyota">
             </div>
         </div>
         <div class="field">
-            <label class="label" for="email">Email:</label>
+            <label class="label" for="year">Año:</label>
             <div class="control">
-                <input class="input" type="text" id="email" placeholder="Example: carlos@gmail.com">
+                <input class="input" type="number" id="year" placeholder="Example: 2021">
             </div>
         </div>
         <div class="field">
-            <label class="label" for="password">Password:</label>
+            <label class="label" for="chasis">Numero de chassis:</label>
             <div class="control">
-                <input class="input" type="text" id="password" placeholder="Example: **********">
+                <input class="input" type="text" id="chasis" placeholder="Example: 14635d816w2wfe5">
             </div>
         </div>
         <div class="block">
@@ -46,15 +46,15 @@
 
             function getValues() {
                 return {
-                    firstName: document.getElementById('firstName').value,
-                    lastName: document.getElementById('lastName').value,
-                    email: document.getElementById('email').value,
-                    password: document.getElementById('password').value,
+                    licensePlate: document.getElementById('licensePlate').value,
+                    brand: document.getElementById('brand').value,
+                    year: document.getElementById('year').value,
+                    chasis: document.getElementById('chasis').value,
                 }
             }
             
 
-            const url = 'http://localhost:3000/usuario';
+            const url = 'http://localhost:3000/automovil';
             const method = 'POST';
             const headers = {
                 'Accept': 'application/json',
