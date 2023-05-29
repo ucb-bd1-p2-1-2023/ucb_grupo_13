@@ -99,6 +99,38 @@ app.post('/automovil', (req, res) => {
   });
 });
 
+app.post('/score', (req, res) => {
+  const body = req.body;
+  const query = `INSERT INTO calificacion(puntaje, resenia) VALUES ('${body.score}', '${body.review}');`;
+
+  connection.query(query, (err, rows, fields) => {
+    if (err) {
+      console.error('Error inserting record: ', err);
+      res.status(500).send('Error inserting record');
+      return;
+    }
+    console.log('1 record inserted');
+    //res.send('1 record inserted');
+    res.json({ message: '1 record inserted' });
+  });
+});
+
+app.post('/driverPayment', (req, res) => {
+  const body = req.body;
+  const query = `INSERT INTO pagoConductor(hash_num_cuenta, banco, tipoCuenta) VALUES ('${body.accountNum}', '${body.bank}','${body.accountType}');`;
+
+  connection.query(query, (err, rows, fields) => {
+    if (err) {
+      console.error('Error inserting record: ', err);
+      res.status(500).send('Error inserting record');
+      return;
+    }
+    console.log('1 record inserted');
+    //res.send('1 record inserted');
+    res.json({ message: '1 record inserted' });
+  });
+});
+
 app.listen(port, () => {
   console.log(`Project sample is running on: ${port}`);
 });

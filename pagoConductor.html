@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <title>In Driver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Applicación Taxi</title>
 </head>
 <body>
     <div class="box">
-        <h1 class="title is-1">🚘 Formulario para usuario</h1>
-        <h2 class="subtitle is-3">Fill your data in this form</h2>
+        <h1 class="title is-1">REGISTER YOUR PAYMENT DATA</h1>
+        <h2 class="subtitle is-3">Provide your information</h2>
     </div>
     <div class="box my-6">
         <div class="field">
-            <label class="label" for="firstName">First name:</label>
+            <label class="label" for="accountNum">Account number:</label>
             <div class="control">
-                <input class="input" type="text" id="firstName" placeholder="Exammple: Carlos">
+                <input class="input" type="number" id="accountNum" placeholder="Example: 2343539854">
             </div>
         </div>
         <div class="field">
-            <label class="label" for="lastName">Last name:</label>
+            <label class="label" for="bank">Bank name:</label>
             <div class="control">
-                <input class="input" type="text" id="lastName" placeholder="Example: Terraza">
+                <input class="input" type="text" id="bank" placeholder="Ejemplo: BNB">
             </div>
         </div>
         <div class="field">
-            <label class="label" for="email">Email:</label>
+            <label class="label" for="accountType">Accout Type:</label>
             <div class="control">
-                <input class="input" type="text" id="email" placeholder="Example: carlos@gmail.com">
+                <input class="input" type="text" id="accountType" placeholder="Ejemplo: cuenta en bolivianos">
             </div>
         </div>
         <div class="block">
@@ -40,14 +40,14 @@
 
             function getValues() {
                 return {
-                    firstName: document.getElementById('firstName').value,
-                    lastName: document.getElementById('lastName').value,
-                    email: document.getElementById('email').value,
+                    accountNum: document.getElementById('accountNum').value,
+                    bank: document.getElementById('bank').value,
+                    accountType: document.getElementById('accountType').value,
                 }
             }
             
 
-            const url = 'http://localhost:3000/driver';
+            const url = 'http://localhost:3000/driverPayment';
             const method = 'POST';
             const headers = {
                 'Accept': 'application/json',

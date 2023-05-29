@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <title>In Driver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Applicación Taxi</title>
 </head>
 <body>
     <div class="box">
-        <h1 class="title is-1">🚘 Formulario para conductor</h1>
-        <h2 class="subtitle is-3">Fill your data in this form</h2>
+        <h1 class="title is-1">CALIFIQUE SU EXPERIENCIA</h1>
+        <h2 class="subtitle is-3">Ingrese la información solicitada</h2>
     </div>
     <div class="box my-6">
         <div class="field">
-            <label class="label" for="firstName">First name:</label>
+            <label class="label" for="score">Score:</label>
             <div class="control">
-                <input class="input" type="text" id="firstName" placeholder="Exammple: Carlos">
+                <select class="input" id="score">
+                    <option value="1">1 </option>
+                    <option value="2">2 </option>
+                    <option value="3">3 </option>
+                    <option value="4">4 </option>
+                    <option value="5">5 </option>
+                </select>
             </div>
         </div>
         <div class="field">
-            <label class="label" for="lastName">Last name:</label>
+            <label class="label" for="review">Review:</label>
             <div class="control">
-                <input class="input" type="text" id="lastName" placeholder="Example: Terraza">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label" for="email">Email:</label>
-            <div class="control">
-                <input class="input" type="text" id="email" placeholder="Example: carlos@gmail.com">
+                <input class="input" type="text" id="review" placeholder="Example: I had a good ride">
             </div>
         </div>
         <div class="block">
@@ -40,14 +40,13 @@
 
             function getValues() {
                 return {
-                    firstName: document.getElementById('firstName').value,
-                    lastName: document.getElementById('lastName').value,
-                    email: document.getElementById('email').value,
+                    score: document.getElementById('score').value,
+                    review: document.getElementById('review').value,
                 }
             }
             
 
-            const url = 'http://localhost:3000/driver';
+            const url = 'http://localhost:3000/score';
             const method = 'POST';
             const headers = {
                 'Accept': 'application/json',
